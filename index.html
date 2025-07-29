@@ -1,0 +1,408 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thandazile Ncamiso | AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Dusty Pink Color Palette */
+    :root {
+      --dusty-pink-darkest: #2E1A2B; /* Very dark plum/rose for deepest background */
+      --dusty-pink-dark: #3F2C3A;   /* Dark dusty rose for main background */
+      --dusty-pink-medium: #5C4057;  /* Medium dusty rose for section backgrounds */
+      --dusty-pink-light: #A08499;   /* Lighter dusty rose for accents/borders */
+      --dusty-pink-accent: #F5B7B1;  /* Brightest dusty pink for highlights/headings */
+      --text-light: #FFF8F0;        /* Off-white for primary text for contrast */
+      --link-hover: #D4AF37;       /* A warm gold/bronze for link hover for contrast */
+      --shadow-color: rgba(245, 183, 177, 0.2); /* Soft pinkish shadow */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif; /* Changed to Montserrat for general text */
+      background: linear-gradient(160deg, var(--dusty-pink-darkest), var(--dusty-pink-dark));
+      color: var(--text-light);
+      animation: pulseBG 8s infinite alternate;
+    }
+
+    @keyframes pulseBG {
+      0% { background-color: var(--dusty-pink-darkest); }
+      100% { background-color: var(--dusty-pink-dark); }
+    }
+
+    header {
+      background: var(--dusty-pink-darkest);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--dusty-pink-light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem; /* Slightly larger for impact */
+      font-family: 'Orbitron', sans-serif; /* Kept Orbitron for header H1 */
+      text-shadow: 0 0 12px var(--dusty-pink-accent); /* Pink shadow */
+      color: var(--dusty-pink-accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem; /* Slightly more space */
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dusty-pink-light); /* Dusty pink for nav links */
+      font-weight: bold;
+      transition: color 0.3s;
+      font-family: 'Montserrat', sans-serif; /* Consistent font */
+    }
+
+    nav a:hover {
+      color: var(--link-hover); /* Gold hover effect */
+    }
+
+    .section {
+      padding: 5rem 2rem; /* More vertical padding */
+      text-align: center;
+      background-color: var(--dusty-pink-medium); /* Medium dusty pink for sections */
+      border-radius: 12px; /* Slightly more rounded corners */
+      margin: 2rem auto; /* Add margin between sections */
+      max-width: 1000px; /* Constrain width */
+      box-shadow: 0 8px 20px var(--shadow-color); /* Pinkish shadow */
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif; /* Kept Orbitron for main headings */
+      text-shadow: 0 0 10px var(--dusty-pink-accent);
+      color: var(--dusty-pink-accent);
+      font-size: 2.5rem; /* Larger H2 */
+      margin-bottom: 2rem;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem; /* More gap */
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--dusty-pink-darkest); /* Darker background for cards */
+      border: 2px solid var(--dusty-pink-light); /* Dusty pink border */
+      border-radius: 15px; /* More rounded */
+      padding: 2rem; /* More padding */
+      width: 300px; /* Slightly wider cards */
+      box-shadow: 0 0 20px var(--shadow-color); /* Stronger pinkish shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px); /* Lift on hover */
+      box-shadow: 0 12px 25px var(--shadow-color); /* Enhanced shadow on hover */
+    }
+
+    .project-card h3 {
+        color: var(--dusty-pink-accent); /* Heading inside card */
+        font-family: 'Montserrat', sans-serif; /* Consistent font */
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        text-align: left; /* Align card text left */
+    }
+
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem; /* Adjusted gap */
+      justify-content: center;
+      padding: 0;
+      margin-top: 2rem;
+    }
+
+    .skills-list li {
+      background: var(--dusty-pink-dark); /* Dark dusty pink for skill tags */
+      padding: 0.7rem 1.5rem; /* More padding */
+      border-radius: 8px; /* Slightly more rounded */
+      border: 1px solid var(--dusty-pink-light); /* Lighter dusty pink border */
+      color: var(--text-light);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .skills-list li:hover {
+        background: var(--link-hover); /* Gold on hover */
+        color: var(--dusty-pink-darkest); /* Dark text on gold */
+    }
+
+    .button {
+      background: linear-gradient(90deg, var(--dusty-pink-accent), #FFC0CB); /* Gradient for dusty pink button */
+      color: var(--dusty-pink-darkest); /* Dark text on button */
+      padding: 0.9rem 2rem; /* More padding */
+      border-radius: 8px; /* Consistent border radius */
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .button:hover {
+      transform: scale(1.08); /* More pronounced scale */
+      box-shadow: 0 0 20px var(--dusty-pink-accent); /* Glow effect */
+    }
+
+    .contact-form {
+      max-width: 600px; /* Wider form */
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem; /* Adjusted gap */
+      padding: 2rem; /* Padding for the form area */
+      background-color: var(--dusty-pink-dark); /* Darker pink background for form */
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem; /* More padding */
+      border: 1px solid var(--dusty-pink-light); /* Dusty pink border */
+      border-radius: 8px; /* Consistent border radius */
+      background: var(--dusty-pink-darkest); /* Darkest pink for input fields */
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(255, 248, 240, 0.6); /* Lighter placeholder text */
+    }
+
+
+    .social-links {
+        margin-top: 2rem;
+    }
+    .social-links a {
+      margin: 0 1.2rem; /* Adjusted margin */
+      color: var(--dusty-pink-light); /* Dusty pink for social links */
+      font-size: 1.2rem; /* Slightly larger */
+      text-decoration: none; /* No underline by default */
+      transition: color 0.3s, transform 0.3s;
+    }
+    .social-links a:hover {
+        color: var(--link-hover); /* Gold hover */
+        transform: translateY(-3px); /* Lift effect */
+        text-decoration: underline; /* Add underline on hover */
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem; /* More padding */
+      background: var(--dusty-pink-darkest); /* Darkest pink for footer */
+      border-top: 2px solid var(--dusty-pink-light); /* Dusty pink border */
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-top: 2rem; /* Space from last section */
+    }
+
+    /* Adjustments for general paragraphs outside specific components */
+    .section p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+      .section {
+        padding: 3rem 1rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .project-card {
+        width: 90%; /* Wider cards on small screens */
+      }
+      .skills-list {
+        gap: 0.8rem;
+      }
+      .contact-form {
+        padding: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        .hero-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+        .project-card, .contact-form {
+            width: 100%; /* Full width on very small screens */
+            padding: 1rem;
+        }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Thandazile Ncamiso</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#goals">Goals</a></li> <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2> Welcome to My Portfolio</h2>
+    <p>Bringing a proven aptitude for problem-solving and a passion for technology, I am an energetic professional transitioning from administrative support.</p>
+    <p>My current focus on Salesforce administration is rapidly developing my skills in cloud systems and data management, aiming for impactful IT contributions.</p>
+    <a href="#projects" class="button">Explore My Work</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m Thandazile Ncamiso, a passionate and driven professional dedicated to building impactful solutions in the tech landscape. With a strong background in administrative support, I've honed my problem-solving skills and attention to detail, which I now apply to the dynamic world of IT.</p>
+    <p>My journey into technology is marked by a deep commitment to learning and growth, especially within the Salesforce ecosystem. I'm excited to contribute to innovative projects and help organizations optimize their processes through smart and efficient IT strategies.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="project-card"> <h3>Salesforce Platform</h3>
+            <ul class="skills-list" style="justify-content: flex-start; gap: 0.8rem;">
+                <li>Sales & Service Cloud</li>
+                <li>Object & Data Management</li>
+                <li>User Management & Security</li>
+                <li>Platform Navigation & Configuration</li>
+                <li>Productivity & Collaboration</li>
+                <li>Automation & Reporting (Declarative)</li>
+            </ul>
+        </div>
+        <div class="project-card">
+            <h3>IT Support Fundamentals</h3>
+            <ul class="skills-list" style="justify-content: flex-start; gap: 0.8rem;">
+                <li>Computer Hardware</li>
+                <li>Operating Systems</li>
+                <li>Networking & Applications</li>
+                <li>Software & Applications</li>
+                <li>Troubleshooting & Problem Solving</li>
+                <li>Basic Security Concepts</li>
+            </ul>
+        </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>📊 Sentiment Analysis Dashboard</h3>
+        <p>A data-driven dashboard utilizing natural language processing to analyze and visualize sentiment from various text sources.</p>
+        <a href="https://github.com/SukoluhleNdlovu/Sentiment-Analysis-Dashboard" target="_blank" class="button">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>🌐 GaoloFusion Web App</h3>
+        <p>A comprehensive web application demonstrating full-stack development skills and user-centric design principles.</p>
+        <a href="https://github.com/SukoluhleNdlovu/GaoloFusion_WebApp" target="_blank" class="button">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>📝 AI Resume Builder</h3>
+        <p>An intelligent tool leveraging AI to assist users in crafting optimized resumes by analyzing input and suggesting improvements.</p>
+        <a href="https://github.com/MissOlifant/AI-RESUME-BUILDER" target="_blank" class="button">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>💬 Chat-Fusion02</h3>
+        <p>An advanced chatbot prototype exploring conversational AI, intent recognition, and fluid user interactions for improved support.</p>
+        <a href="https://github.com/KutlwanoCKuape/Chat-Fusion02" target="_blank" class="button">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals" class="section">
+    <h2>Career Goals</h2>
+    <div class="skills-grid"> <div class="project-card" style="text-align: left;">
+            <h3>Secure a Salesforce Administrator Role</h3>
+            <p>My primary short-term goal is to secure an entry-level Salesforce Administrator or similar IT support position within the next 6 months. I aim to leverage my administrative background and newly acquired Salesforce skills to contribute effectively to a dynamic team.</p>
+        </div>
+        <div class="project-card" style="text-align: left;">
+            <h3>Master Salesforce Fundamentals</h3>
+            <p>Within my first year in an IT role, I plan to solidify my practical expertise in Salesforce administration, including user management, data security, standard and custom object configuration, and basic automation tools (Flow, Process Builder). I will pursue the Salesforce Administrator Certification to validate my skills.</p>
+        </div>
+        <div class="project-card" style="text-align: left;">
+            <h3>Contribute to Process Optimization</h3>
+            <p>I aim to apply my administrative and client experience to identify and implement improvements in at least two key business processes using Salesforce features within my first year, demonstrating a tangible impact on efficiency or user experience.</p>
+        </div>
+    </div>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>I'm always open to new opportunities and collaborations. Feel free to connect!</p>
+
+    <p><strong>Email:</strong> <a href="mailto:thandazile.ncamiso@gmail.com" style="color: var(--text-light); text-decoration: none;">thandazile.ncamiso@gmail.com</a></p>
+    <p><strong>Cell:</strong> 0781722560</p>
+
+    <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="button">Send Message</button>
+    </form>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/thandazile-ncamiso" target="_blank">LinkedIn</a>
+        <a href="https://github.com/NkulyN" target="_blank">GitHub</a>
+        <a href="mailto:thandazile.ncamiso@gmail.com">Email</a>
+    </div>
+</section>
+
+  <footer>
+    <p>© 2025 Thandazile Ncamiso </p>
+  </footer>
+</body>
+</html>
+
+
+

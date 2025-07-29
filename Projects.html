@@ -1,0 +1,375 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>All My Projects - Thandazile Ncamiso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Dusty Pink Color Palette - EXACTLY as provided by you */
+        :root {
+            --dusty-pink-darkest: #2E1A2B; /* Very dark plum/rose for deepest background */
+            --dusty-pink-dark: #3F2C3A;    /* Dark dusty rose for main background */
+            --dusty-pink-medium: #5C4057;  /* Medium dusty rose for section backgrounds */
+            --dusty-pink-light: #A08499;    /* Lighter dusty rose for accents/borders */
+            --dusty-pink-accent: #F5B7B1;  /* Brightest dusty pink for highlights/headings */
+            --text-light: #FFF8F0;         /* Off-white for primary text for contrast */
+            --link-hover: #D4AF37;         /* A warm gold/bronze for link hover for contrast */
+            --shadow-color: rgba(245, 183, 177, 0.2); /* Soft pinkish shadow */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(160deg, var(--dusty-pink-darkest), var(--dusty-pink-dark));
+            color: var(--text-light);
+            animation: pulseBG 8s infinite alternate;
+        }
+
+        @keyframes pulseBG {
+            0% { background-color: var(--dusty-pink-darkest); }
+            100% { background-color: var(--dusty-pink-dark); }
+        }
+
+        /* General container for the page content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Styling for each individual project detail block */
+        .project-detail-section {
+            background-color: var(--dusty-pink-medium); /* Medium dusty pink background */
+            padding: 3rem; /* Generous padding */
+            border-radius: 12px;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            margin-bottom: 3rem; /* Space between project sections */
+            text-align: center; /* Center main heading */
+            border-top: 3px solid var(--dusty-pink-light); /* Lighter dusty pink border */
+        }
+
+        /* Overall page title */
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem; /* Larger for the main page title */
+            color: var(--dusty-pink-accent);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 0 20px var(--dusty-pink-accent); /* More pronounced glow */
+        }
+
+        /* Headings within each project section */
+        .project-detail-section h1 { /* This will be the project name, e.g., "Sentiment Analysis Dashboard" */
+            font-family: 'Orbitron', sans-serif; /* Use Orbitron for project names */
+            font-size: 2.5rem; /* Slightly smaller than page title, larger than sub-headings */
+            color: var(--dusty-pink-accent);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px var(--dusty-pink-accent);
+        }
+
+        .project-detail-section h2 { /* Sub-headings like "Key Features" */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--dusty-pink-accent);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--dusty-pink-light);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            text-shadow: 0 0 8px rgba(245, 183, 177, 0.4);
+        }
+
+        .project-detail-section p {
+            text-align: left;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        /* Lists for Features/Technologies */
+        .project-detail-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .project-detail-section li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .project-detail-section li::before {
+            content: "•";
+            color: var(--dusty-pink-accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Buttons (reusing existing 'button' class) */
+        .button {
+            background: linear-gradient(90deg, var(--dusty-pink-accent), #FFC0CB);
+            color: var(--dusty-pink-darkest);
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px var(--dusty-pink-accent);
+        }
+
+        /* Back to Portfolio Link */
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--dusty-pink-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .back-to-portfolio:hover {
+            color: var(--link-hover);
+            transform: translateX(-5px);
+            text-decoration: underline;
+        }
+
+        /* Media Section (for screenshots/videos) */
+        .project-media {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .project-media img,
+        .project-media video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--dusty-pink-light);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dusty-pink-darkest);
+            border-top: 2px solid var(--dusty-pink-light);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 3rem;
+        }
+        footer span {
+            color: #e25555;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .page-title {
+                font-size: 2.8rem;
+                margin-bottom: 2rem;
+            }
+            .project-detail-section {
+                padding: 2rem 1.5rem;
+            }
+            .project-detail-section h1 {
+                font-size: 2rem;
+            }
+            .project-detail-section h2 {
+                font-size: 1.7rem;
+            }
+            .button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+            .project-detail-section {
+                padding: 1.5rem 1rem;
+            }
+            .project-detail-section h1 {
+                font-size: 1.8rem;
+            }
+            .project-detail-section h2 {
+                font-size: 1.5rem;
+            }
+            .button {
+                display: block;
+                width: calc(100% - 2rem);
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-to-portfolio">&larr; Back to Portfolio</a>
+
+        <h1 class="page-title">All My Featured Projects</h1>
+
+        <div class="project-detail-section">
+            <h1>📊 Sentiment Analysis Dashboard</h1>
+            <p><strong>Project Overview:</strong> This project involved designing and implementing an interactive dashboard for real-time sentiment analysis, primarily targeting customer feedback and social media data. The goal was to provide businesses with quick insights into public perception, enabling data-driven decision-making.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Real-time Data Ingestion:</strong> Capable of processing streaming text data from various sources.</li>
+                <li><strong>Natural Language Processing (NLP):</strong> Utilized advanced NLP techniques for accurate sentiment classification (positive, negative, neutral).</li>
+                <li><strong>Interactive Visualizations:</strong> Dashboard features dynamic charts (e.g., sentiment distribution, trend over time, word clouds) built with Power BI/Plotly.</li>
+                <li><strong>Customizable Filters:</strong> Users can filter sentiment data by date, source, keywords, and specific categories.</li>
+                <li><strong>Scalable Architecture:</strong> Designed with a modular approach to handle increasing data volumes.</li>
+            </ul>
+
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python</li>
+                <li><strong>NLP Libraries:</strong> NLTK, spaCy, TextBlob</li>
+                <li><strong>Data Processing:</strong> Pandas, NumPy</li>
+                <li><strong>Database:</strong> (e.g., PostgreSQL, MongoDB) - *Specify if applicable*</li>
+                <li><strong>Dashboarding Tools:</strong> Power BI / Streamlit / Dash (Python framework)</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+
+            <div class="project-media">
+                <h2>Screenshots / Demos</h2>
+                <img src="https://via.placeholder.com/800x450/A08499/2E1A2B?text=Dashboard+Screenshot+1" alt="Sentiment Analysis Dashboard View 1">
+                <img src="https://via.placeholder.com/800x450/F5B7B1/2E1A2B?text=Dashboard+Screenshot+2" alt="Sentiment Analysis Dashboard View 2">
+                <p>*(Remember to replace placeholder images/videos with your actual project visuals!)*</p>
+            </div>
+
+            <a href="https://github.com/SukoluhleNdlovu/Sentiment-Analysis-Dashboard" target="_blank" class="button">View Code on GitHub</a>
+        </div>
+
+        <div class="project-detail-section">
+            <h1>🌐 GaoloFusion Web App</h1>
+            <p><strong>Project Overview:</strong> GaoloFusion is a comprehensive web application designed to demonstrate full-stack development skills, incorporating a robust backend with a user-friendly frontend. It serves as a platform to showcase secure user authentication, database management, and interactive data presentation.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Secure User Authentication:</strong> Implemented robust sign-up, login, and session management.</li>
+                <li><strong>Dynamic Content Loading:</strong> Fetches and displays data dynamically from the backend.</li>
+                <li><strong>CRUD Operations:</strong> Full Create, Read, Update, Delete functionality for various data models.</li>
+                <li><strong>Responsive Design:</strong> Ensures optimal viewing and interaction across various devices.</li>
+                <li><strong>Interactive User Interface:</strong> Designed for intuitive navigation and engaging user experience.</li>
+            </ul>
+
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (e.g., React/Vue/Angular - *specify if used*)</li>
+                <li><strong>Backend:</strong> (e.g., Node.js/Python Flask/Django - *specify if used*)</li>
+                <li><strong>Database:</strong> (e.g., MongoDB/PostgreSQL/MySQL - *specify if used*)</li>
+                <li><strong>Authentication:</strong> (e.g., JWT, Passport.js - *specify if used*)</li>
+                <li><strong>Deployment:</strong> (e.g., Heroku, Vercel - *specify if used*)</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+
+            <div class="project-media">
+                <h2>Screenshots / Demos</h2>
+                <img src="https://via.placeholder.com/800x450/A08499/2E1A2B?text=GaoloFusion+Screenshot+1" alt="GaoloFusion Web App Screenshot 1">
+                <img src="https://via.placeholder.com/800x450/F5B7B1/2E1A2B?text=GaoloFusion+Screenshot+2" alt="GaoloFusion Web App Screenshot 2">
+                <p>*(Remember to replace placeholder images/videos with your actual project visuals!)*</p>
+            </div>
+
+            <a href="https://github.com/SukoluhleNdlovu/GaoloFusion_WebApp" target="_blank" class="button">View Code on GitHub</a>
+        </div>
+
+        <div class="project-detail-section">
+            <h1>📝 AI Resume Builder</h1>
+            <p><strong>Project Overview:</strong> The AI Resume Builder is an intelligent application designed to revolutionize the resume creation process. It leverages AI to analyze user input, suggest improvements, and optimize resume content for specific job descriptions, significantly increasing a candidate's chances of success.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>AI-Powered Suggestions:</strong> Provides real-time feedback and suggestions for content optimization.</li>
+                <li><strong>Job Description Analysis:</strong> Analyzes job descriptions to highlight relevant keywords and skills.</li>
+                <li><strong>Template Customization:</strong> Offers various professional templates that can be easily customized.</li>
+                <li><strong>Content Generation:</strong> Assists in generating impactful bullet points and summaries.</li>
+                <li><strong>PDF Export:</strong> Allows users to export their optimized resumes in a professional PDF format.</li>
+            </ul>
+
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python (for AI/backend logic)</li>
+                <li><strong>AI/NLP Frameworks:</strong> (e.g., spaCy, NLTK, OpenAI API - *specify if used*)</li>
+                <li><strong>Frontend:</strong> (e.g., Streamlit, Flask with HTML/CSS/JS - *specify if used*)</li>
+                <li><strong>Database:</strong> (e.g., SQLite, NoSQL - *specify if used*)</li>
+                <li><strong>Deployment:</strong> (e.g., Streamlit Cloud, Heroku - *specify if used*)</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+
+            <div class="project-media">
+                <h2>Screenshots / Demos</h2>
+                <img src="https://via.placeholder.com/800x450/A08499/2E1A2B?text=AI+Resume+Builder+Screenshot+1" alt="AI Resume Builder Screenshot 1">
+                <img src="https://via.placeholder.com/800x450/F5B7B1/2E1A2B?text=AI+Resume+Builder+Screenshot+2" alt="AI Resume Builder Screenshot 2">
+                <p>*(Remember to replace placeholder images/videos with your actual project visuals!)*</p>
+            </div>
+
+            <a href="https://github.com/MissOlifant/AI-RESUME-BUILDER" target="_blank" class="button">View Code on GitHub</a>
+        </div>
+
+        <div class="project-detail-section">
+            <h1>💬 Chat-Fusion02</h1>
+            <p><strong>Project Overview:</strong> Chat-Fusion02 is an advanced chatbot prototype exploring cutting-edge conversational AI. It focuses on intent recognition, natural language understanding, and fluid, human-like interactions to provide enhanced user support and information retrieval. This project aims to demonstrate capabilities beyond standard rule-based chatbots.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Natural Language Understanding (NLU):</strong> Interprets complex user queries and intentions accurately.</li>
+                <li><strong>Contextual Conversation:</strong> Maintains context across multiple turns in a conversation.</li>
+                <li><strong>Adaptive Responses:</strong> Generates dynamic and relevant responses based on user input and history.</li>
+                <li><strong>Integration Capabilities:</strong> Designed for potential integration with various platforms (e.g., websites, messaging apps).</li>
+                <li><strong>Scalable Architecture:</strong> Built to handle a growing range of topics and user interactions.</li>
+            </ul>
+
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python</li>
+                <li><strong>AI/ML Frameworks:</strong> (e.g., TensorFlow, PyTorch, Rasa - *specify if used*)</li>
+                <li><strong>NLP Libraries:</strong> (e.g., spaCy, NLTK, Transformers - *specify if used*)</li>
+                <li><strong>Dialogue Management:</strong> (e.g., custom logic, existing chatbot frameworks - *specify if used*)</li>
+                <li><strong>Deployment:</strong> (e.g., Docker, cloud platforms - *specify if used*)</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+
+            <div class="project-media">
+                <h2>Screenshots / Demos</h2>
+                <img src="https://via.placeholder.com/800x450/A08499/2E1A2B?text=Chat-Fusion02+Screenshot+1" alt="Chat-Fusion02 Screenshot 1">
+                <img src="https://via.placeholder.com/800x450/F5B7B1/2E1A2B?text=Chat-Fusion02+Screenshot+2" alt="Chat-Fusion02 Screenshot 2">
+                <p>*(Remember to replace placeholder images/videos with your actual project visuals!)*</p>
+            </div>
+
+            <a href="https://github.com/KutlwanoCKuape/Chat-Fusion02" target="_blank" class="button">View Code on GitHub</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thandazile Ncamiso | Built with <span style="color: #e25555;">&hearts;</span> & AI</p>
+        </div>
+    </footer>
+</body>
+</html>
